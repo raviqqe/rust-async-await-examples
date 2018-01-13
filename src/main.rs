@@ -25,8 +25,8 @@ fn bar() -> Result<i32, i32> {
     let c1 = POOL.spawn(f1);
     let c2 = POOL.spawn(f2);
 
-    c1.wait()?;
-    c2.wait()?;
+    await!(c1)?;
+    await!(c2)?;
 
     return Ok(1);
 }
